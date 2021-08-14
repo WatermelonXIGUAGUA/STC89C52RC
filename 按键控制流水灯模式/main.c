@@ -1,18 +1,25 @@
 #include <REGX52.H>
-#include "Delay.h"
-#include "LCD1602.h"
-#include "MatrixKey.h"
-
-void Timer0_Init();
+#include "Timer0.h"
 
 void main()
 {
+	Timer0Init();
 	while (1)
 	{
 	}
 }
 
-void Timer0_Init() 
+
+
+void Timer0_Routine() interrupt 1
 {
-	TMOD=0x01;
+	static unsigned int T0Count;
+	TL0 = 0x18; //设置定时初值
+	TH0 = 0xFC; //设置定时初值
+	T0Count++;
+	if (T0Count >= 1000)
+	{
+		T0Count = 0;
+		P2_0 = ~P2_0;
+	}
 }
