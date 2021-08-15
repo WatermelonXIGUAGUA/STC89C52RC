@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   KEY                                                                   08/15/2021 13:27:49 PAGE 1   
+C51 COMPILER V9.54   KEY                                                                   08/15/2021 13:46:45 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE KEY
@@ -20,12 +20,12 @@ line level    source
   10          unsigned char Key()
   11          {
   12   1          unsigned char KeyNumber = 0;
-  13   1         // LCD_Init();
+  13   1          LCD_Init();
   14   1          if (P3_1 == 0)
   15   1          {
   16   2              Delay(20);
   17   2              while (P3_1 == 0)
-  18   2                //LCD_ShowString(1, 1, "Push Button: K1");
+  18   2                LCD_ShowString(1, 1, "Push Button: K1");
   19   2              ;
   20   2              Delay(20);
   21   2              KeyNumber = 1;
@@ -34,7 +34,7 @@ line level    source
   24   1          {
   25   2              Delay(20);
   26   2              while (P3_0 == 0)
-  27   2                  //LCD_ShowString(1, 1, "Push Button: K2");
+  27   2                  LCD_ShowString(1, 1, "Push Button: K2");
   28   2              ;
   29   2              Delay(20);
   30   2              KeyNumber = 2;
@@ -43,7 +43,7 @@ line level    source
   33   1          {
   34   2              Delay(20);
   35   2              while (P3_2 == 0)
-  36   2                 // LCD_ShowString(1, 1, "Push Button: K3");
+  36   2                  LCD_ShowString(1, 1, "Push Button: K3");
   37   2              ;
   38   2              Delay(20);
   39   2              KeyNumber = 3;
@@ -52,21 +52,21 @@ line level    source
   42   1          {
   43   2              Delay(20);
   44   2              while (P3_3 == 0)
-  45   2                 // LCD_ShowString(1, 1, "Push Button: K4");
+  45   2                  LCD_ShowString(1, 1, "Push Button: K4");
   46   2              ;
   47   2              Delay(20);
   48   2              KeyNumber = 4;
   49   2          }
-  50   1         // LCD_ShowString(1, 1, "         ");
+  50   1          LCD_ShowString(1, 1, "         ");
   51   1          return KeyNumber;
   52   1      }
 
 
-C51 COMPILER V9.54   KEY                                                                   08/15/2021 13:27:49 PAGE 2   
+C51 COMPILER V9.54   KEY                                                                   08/15/2021 13:46:45 PAGE 2   
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     97    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =    174    ----
+   CONSTANT SIZE    =     74    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----       1
