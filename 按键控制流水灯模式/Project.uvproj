@@ -403,6 +403,26 @@
               <FileType>5</FileType>
               <FilePath>.\MatrixKey.h</FilePath>
             </File>
+            <File>
+              <FileName>Timer0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer0.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer0.h</FilePath>
+            </File>
+            <File>
+              <FileName>Key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Key.c</FilePath>
+            </File>
+            <File>
+              <FileName>Key.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Key.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

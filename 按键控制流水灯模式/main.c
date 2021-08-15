@@ -1,15 +1,24 @@
 #include <REGX52.H>
 #include "Timer0.h"
+#include "Key.h"
+#include "INTRINS.h"
 
+unsigned char KeyNumber, LEDMode;
 void main()
 {
+	P2 = 0xFE;
 	Timer0Init();
 	while (1)
-	{
+	{ //获取按键编号
+		KeyNumber = Key();
+		if (KeyNumber == 1)
+		{
+			LEDMode++;
+			if (LEDMode >= 2)
+				LEDMode = 0;
+		}
 	}
 }
-
-
 
 void Timer0_Routine() interrupt 1
 {
@@ -17,9 +26,13 @@ void Timer0_Routine() interrupt 1
 	TL0 = 0x18; //设置定时初值
 	TH0 = 0xFC; //设置定时初值
 	T0Count++;
-	if (T0Count >= 1000)
+	if (T0Count >= 500)
 	{
 		T0Count = 0;
-		P2_0 = ~P2_0;
+		if (LEDMode == 0)
+			P2 = _crol_(P2, 1);
+
+		if (LEDMode == 1)
+			P2 = _cror_(P2, 1);
 	}
 }
